@@ -1,0 +1,64 @@
+[2:37 pm, 14/09/2022] Jp In: <html>
+<head>
+<meta charset="utf-8" />
+<title>Guess the Number!</title>
+<script type="text/javascript">
+  var number = generateNewValue();
+  
+  function generateNewValue(){
+    return Math.floor(1000*Math.random())+1;
+  }
+  
+  function guess(){
+    if (document.getElementById("playerNumber").value == undefined || document.getElementById("playerNumber").value.trim() == "" || isNaN(document.getElementById("playerNumber").value)){
+      alert("Please type a number");
+      document.getElementById("playerNumber").focus();
+      return false;
+    }
+    if (parseInt(document.getElementById("playerNumber").value) > number){
+      alert("Too high\n\nTry again.");
+    }else if (parseInt(document.getElementById("playerNumber").value) < number){
+      alert("Too low\n\…
+[2:37 pm, 14/09/2022] Jp In: <!DOCTYPE html>
+<html>
+<head>
+<style>
+body  {
+  background-image: url("https://cdn.pixabay.com/photo/2015/12/01/20/28/road-1072823_960_720.jpg");
+  background-size:100vh;
+  background-repeat:no-repeat;
+  background-position:bottom;
+  
+  color:red;
+}
+</style>
+</head>
+<body><center>
+<h1>The background-attachment property</h1>
+
+
+<p>The background-image is fixed. Try to scroll down the page.</p>
+<p>The background-image is fixed. Try to scroll down the page.</p>
+<p>The background-image is fixed. Try to scroll down the page.</p>
+<p>The background-image is fixed. Try to scroll down the page.</p>
+<p>The background-image is fixed. Try to scroll down the page.</p>
+<p>The background-image is fixed. Try to scroll down the page.</p>
+<p>The background-image is fixed. Try to scroll down the page.</p>
+<p>The background-image is fixed. Try to scroll down the page.</p>
+<p>The background-image is fixed. Try to scroll down the page.</p>
+<p>The background-image is fixed. Try to scroll down the page.</p>
+<p>The background-image is fixed. Try to scroll down the page.</p>
+<p>The background-image is fixed. Try to scroll down the page.</p>
+<p>The background-image is fixed. Try to scroll down the page.</p>
+<p>The background-image is fixed. Try to scroll down the page.</p>
+<p>The background-image is fixed. Try to scroll down the page.</p>
+<p>The background-image is fixed. Try to scroll down the page.</p>
+<p>The background-image is fixed. Try to scroll down the page.</p>
+<p>The background-image is fixed. Try to scroll down the page.</p>
+<p>The background-image is fixed. Try to scroll down the page.</p>
+<p>The background-image is fixed. Try to scroll down the page.</p>
+<p>If you do not see any scrollbars, try to resize the browser window.</p>
+</center>
+
+</body>
+</html>

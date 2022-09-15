@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>puzzle</title>
+<script type="text/javascript">
+<!--
+function puzzle()
+{
+for(var i = 0; i < 500; i++)
+{
+var moves = new Array(); // The set of valid moves
+var pos = 0; // The number of candidate valid moves
+/* Find blank */
+for(var blankpos = 0; blankpos< 16; blankpos++)
+{
+if(slot(blankpos).innerText == "0")
+{
+/* Find moves */
+if((blankpos % 4) > 0)
+{
+moves[pos++] = blankpos - 1; // Left
+}
+if((blankpos % 4) < 3)
+{
+moves[pos++] = blankpos + 1; // Right
+}
+if(blankpos > 3)
+{
+moves[pos++] = blankpos - 4; // Up
+}
+if(blankpos < 12)
+{
+moves[pos++] = blankpos + 4; // Down
+}
+}
+}
+/* Move random candidate */
+moveSlot(moves[(Math.floor(Math.random() * moves.length))]);
+}
+}
+function moveSlot(pos)
+{
+var move = -1; // The cell to which to move
+if((pos % 4) > 0 && slot(pos - 1).innerText == "0")
+{
+move = pos - 1; // Left
+}
+if((pos % 4) < 3 && slot(pos + 1).innerText == "0")
+{
+move = pos + 1; // Right
+}
+if(pos > 3 && slot(pos - 4).innerText == "0")
+{
+move = pos - 4; // Up
+}
+if(pos < 12 && slot(pos + 4).innerText == "0")
+{
+move = pos + 4; // Down
+}
+if(move > -1)
+{
+slot(move).innerText = slot(pos).innerText;
+slot(move).className = slot(pos).className;
+slot(pos).innerText = "0";
+slot(pos).className = "blankpos";
+}
+}
+// -->
+</script>
+<style type="text/css">
+b
+{
+font-size:100;
+display:inline;
+height:60;
+width:60;
+}
+.blankpos
+{
+display:none;
+}
+</style>
+<style type="text/css">
+p.c2
+{
+text-align:center;
+}
+button.c1
+{
+font-size:20;
+width:160;
+}
+.style1 {
+color: #000066;
+font-weight: bold;
+}
+</style>
+</head>
+<body>
+<table style="width: 100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td valign="top">&nbsp;</td>
+<h1>Puzzle</h1>
+<hr />
+
+<p>(15 Puzzle) Write a web page that enables the user to play the game of 15. There is a 4-by-4 board (implemented as an XHTML table) for a total of 16 slots. One of the slots is empty. The other slots are occupied by 15 tiles, randomly numbered from 1 through 15. Any tile next to the currently empty slot can be moved into the currently empty slot by clicking on the tile. Your program should create the board with the tiles out of order. The user's goal is to arrange the tiles in sequential order row by row. Using the DOM and the onclick event, write a script that allows the user to swap the positions of the open position and an adjacent tile. [Hint: The onclick event should be specified for each table cell.</p>
+<table border="1" align="center" bgcolor="pink">
+<center>
+<tr>
+<td><button id="slot" class="b" onclick="moveSlot(0)">01 </button></td>
+<td><button id="slot" class="b" onclick="moveSlot(1)">02</button></td>
+<td><button id="slot" class="b" onclick="moveSlot(2)">03</button></td>
+<td><button id="slot" class="b" onclick="moveSlot(3)">04</button></td>
+</tr>
+</center>
+<center>
+<tr>
+<td><button id="slot" class="b" onclick="moveSlot(4)">05</button></td>
+<td><button id="slot" class="b" onclick="moveSlot(5)">06</button></td>
+<td><button id="slot" class="b" onclick="moveSlot(6)">07</button></td>
+<td><button id="slot" class="b" onclick="moveSlot(7)">08</button></td>
+</tr>
+</center>
+<center>
+<tr>
+<td><button id="slot" class="b" onclick="moveSlot(8)">09</button></td>
+<td><button id="slot" class="b" onclick="moveSlot(9)">10</button></td>
+<td><button id="slot" class="b" onclick="moveSlot(10)">11</button></td>
+<td><button id="slot" class="b" onclick="moveSlot(11)">12</button></td>
+</tr>
+</center>
+<center>
+<tr>
+<td><button id="slot" class="b" onclick="moveSlot(12)">13</button></td>
+<td><button id="slot" class="b" onclick="moveSlot(13)">14</button></td>
+<td><button id="slot" class="b" onclick="moveSlot(14)">15</button></td>
+<td><button id="slot" class="blankpos" onclick="moveSlot(15)">0</button></td>
+</tr>
+</center>
+</table>
+<p class="c2"><button onclick="puzzle()" class="c1">New Game</button></p>
+</td>
+</tr>
+</table>
+
+</body>
+</html>

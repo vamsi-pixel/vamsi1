@@ -1,0 +1,48 @@
+import java.util.Scanner;
+public class Program5
+{
+    public static void main(String[] args)
+    {
+        Scanner keyboard = new Scanner(System.in);
+
+        double totalCost1 = 0, totalCost2 = 0, totalCost3 = 0, totalCost4 = 0, totalCost5 = 0;
+
+        System.out.println("Please enter the product number 1-5. Enter 0 to stop. :");
+
+        int productNumber=keyboard.nextInt();
+
+        while(productNumber!=0)
+        {
+            switch (productNumber)
+            {
+                case 1:
+                    System.out.println("Enter quantity sold :");
+                    double product1=keyboard.nextDouble();
+                    totalCost1 = (2.98*product1);
+                    break;
+                case 2:
+                    System.out.println("Enter quantity sold :");
+                    double product2=keyboard.nextDouble();
+                    totalCost2 = (4.50*product2);
+                    break;
+                case 3:
+                    System.out.println("Enter Quantity sold :");
+                    double product3=keyboard.nextDouble();
+                    totalCost3 = (9.98*product3);
+                    break;
+                case 4:
+                    System.out.println("Enter Quantity sold :");
+                    double product4=keyboard.nextDouble();
+                    totalCost4 = (4.49*product4);
+                    break;
+                case 5:
+                    System.out.println("Enter Quantity sold :");
+                    double product5=keyboard.nextDouble();
+                    totalCost5 = (6.87*product5);
+                    break;
+            }
+        }
+
+        System.out.printf("Product 1: %.2f%nProduct 2: %.2f%nProduct 3: %.2f%nProduct 4: %.2f%nProduct 5: %.2f%n", totalCost1, totalCost2, totalCost3, totalCost4, totalCost5);
+    }
+}

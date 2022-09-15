@@ -1,0 +1,47 @@
+<html>
+
+<head>
+
+<title>Mouse Events Example</title>
+
+<script type=”text/javascript”>
+
+function handleEvent(oEvent) {
+
+var oTextbox = document.getElementById(“txt1”);
+
+oTextbox.value += “\n    button down is ” +
+
+oEvent.button;
+
+var arrKeys = [];
+
+if (oEvent.ctrlKey) {
+
+arrKeys.push(“Ctrl”);
+
+}
+
+oTextbox.value += “\n    keys down are ” + arrKeys;
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+<P>Use your mouse to click and double click the red square.</p>
+
+<div style=”width: 100px; height: 100px; background-color: red”
+
+onclick=”handleEvent(event)”
+
+id=”div1″></div>
+
+<P><textarea id=”txt1″ rows=”15″ cols=”50″></textarea></p>
+
+</body>
+
+</html>
